@@ -3,10 +3,10 @@ include 'header.php';
 include "Idee/crudIdee.php";
 
 
-$crudIdee=new crudIdee();
+$crudIdee = new crudIdee();
 
-$list=$crudIdee->afficher();
-$i=0;
+$list = $crudIdee->afficher();
+$i = 0;
 ?>
 <section class="contact_header top">
     <div class="container">
@@ -30,19 +30,18 @@ $i=0;
 
         <div class="row">
 
-            <?php foreach($list as $k): ?>
-                <?php if ($i==3) {
+            <?php foreach ($list as $k): ?>
+                <?php if ($i == 3) {
 
-                        echo'</div>
+                    echo '</div>
                                 <hr>
                              <div class="row">';
-                        $i=1;
+                    $i = 1;
 
 
-                      }
-                      else if($i<3){
-                          $i++;
-                      }
+                } else if ($i < 3) {
+                    $i++;
+                }
                 ?>
 
                 <div class="col-md-4 col-sm-6 col-xs-12">
@@ -65,16 +64,17 @@ $i=0;
                                     <?php echo $k[4]; ?>
                                 </p>
                             </div>
-                            <form method="POST" action ="Idee/supimerIdee.php" id="formI_Delete">
+                            <form method="POST" action="Idee/supimerIdee.php" id="formI_Delete">
                                 <input type="text" name="id_to_delete" value=<?php echo $k[0]; ?> hidden>
                                 <button type="submit" value="<?php echo $k[0]; ?>" id="id_to_delete" name="id_to_delete"
                                         class="btn btn-danger pull-right">
                                     <i class="fa fa-trash-o" aria-hidden="true"></i>
                                 </button>
                             </form>
-                            <form method="GET" action ="IdeeEdit.php" id="formI_Find">
+                            <form method="GET" action="IdeeEdit.php" id="formI_Find">
                                 <input type="text" name="id_to_edit" value=<?php echo $k[0]; ?> hidden>
-                                <button type="submit" value="<?php echo $k[0]; ?>"  name="id_to_find" class="btn btn-success"
+                                <button type="submit" value="<?php echo $k[0]; ?>" name="id_to_find"
+                                        class="btn btn-success"
                                         data-toggle="modal" data-target="#myModalEdit">
                                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                 </button>
@@ -149,8 +149,8 @@ $i=0;
                         <label for="usrname"><span class="glyphicon glyphicon-user"></span> Prix</label>
                         <input type="number" class="form-control" placeholder="Entrer le prix" name="prix" id="prix">
                     </div>
-                    <button type="submit" class="btn btn-success btn-default" ><span
-                                class="glyphicon glyphicon-off" ></span> Ajouter
+                    <button type="submit" class="btn btn-success btn-default"><span
+                                class="glyphicon glyphicon-off"></span> Ajouter
                     </button>
                 </form>
             </div>
